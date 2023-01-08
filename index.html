@@ -36,104 +36,52 @@
       <p id="demo"></p>
       <!-- <p id="setTime">9</p>
       <p id="demo5"></p> -->
-
-      <!-- <ul>
-        <li>foo</li>
-        <li>bar</li>
-        <li>now</li>
-      </ul> -->
-
     </header>
  
+    <section class="text-center notification" id="msg">    
+    </section>
 
     <div class="container">
     
       <!-- Timeblocks go here -->
       <div class="container text-center">
         <div class="row row-cols-3">
-          <div class="col-2 timeBlock" id="time9">9</div>
-          <textarea class="col-9 eventBlock" type="text" name="event" id="event" placeholder="Default info here">
+          <div class="col-2 timeBlock" id="hour9">9</div>
+          <textarea class="col-9 description" type="text" name="description9" id="description9" placeholder="Default info here">
           </textarea>
-          <button class="saveBtn" id="save">Save</button>
-          <div id="msg"></div>
+          <button class="saveBtn" id="save9">Save</button>
         </div>
       </div> 
       <div class="container text-center">
         <div class="row row-cols-3">
-          <div class="col-2 timeBlock" id="time10">10</div>
-          <textarea class="col-9 eventBlock" type="text" name="event" id="event" placeholder="Default info here">
+          <div class="col-2 timeBlock" id="hour10">10</div>
+          <textarea class="col-9 description" type="text" name="description10" id="description10" placeholder="Default info here">
           </textarea>
-          <button class="saveBtn" id="save">Save</button>
-          <div id="msg"></div>
+          <button class="saveBtn" id="save10">Save</button>
         </div>
       </div> 
-      
       <div class="container text-center">
         <div class="row row-cols-3">
-          <div class="col-2 timeBlock" id="time11">18</div>
-          <textarea class="col-9 eventBlock" type="text" name="event" id="event" placeholder="Default input">
+          <div class="col-2 timeBlock" id="hour11">-1</div>
+          <textarea class="col-9 description" type="text" name="description11" id="description11" placeholder="Default input">
           </textarea>
-          <button class="saveBtn" id="save">Save</button>
-          <div id="msg"></div>
+          <button class="saveBtn" id="save11">Save</button>
         </div>
       </div> 
-    <div>
       <br>
-
-
-      <div class="container text-center">
-        <div class="row row-cols-3">
-          <div class="col-2">9AM</div>
-          <div class="col-9"><input class="form-control" id="demo" type="text" placeholder="Default input" aria-label="default input example" style=""></div>
-          <div class="col-1"><button class="saveBtn">Save</button></div>
-        </div>
-
-
-
-        <div class="row row-cols-3">
-          <div class="col-2">10AM</div>
-          <div class="col-9"><input class="form-control" type="text" placeholder="Default input" aria-label="default input example" style="background-color :gray; "></div>
-          <div class="col-1"></div>
-        </div>
-        <div class="row row-cols-3">
-          <div class="col-2">11AM</div>
-          <div class="col-9"><input class="form-control" type="text" placeholder="Default input" aria-label="default input example" style="background-color :red; "></div>
-          <div class="col-1"></div>
-        </div>
-        <div class="row row-cols-3">
-          <div class="col-2">12PM</div>
-          <div class="col-9"><input class="form-control" type="text" placeholder="Default input" aria-label="default input example" style="background-color : green; "></div>
-          <div class="col-1"></div>
-          </div>
-          <div class="row row-cols-3">
-            <div class="col-2">1PM</div>
-            <div class="col-9"><input class="form-control" id="demo" type="text" placeholder="Default input" aria-label="default input example" style=""></div>
-            <div class="col-1">Save</div>
-          </div>
-          <div class="row row-cols-3">
-            <div class="col-2">2PM</div>
-            <div class="col-9"><input class="form-control" id="demo" type="text" placeholder="Default input" aria-label="default input example" style=""></div>
-            <div class="col-1">Save</div>
-          </div>
-          <div class="row row-cols-3">
-            <div class="col-2">3PM</div>
-            <div class="col-9"><input class="form-control" id="demo" type="text" placeholder="Default input" aria-label="default input example" style=""></div>
-            <div class="col-1">Save</div>
-          </div>
-          <div class="row row-cols-3">
-            <div class="col-2">4PM</div>
-            <div class="col-9"><input class="form-control" id="demo" type="text" placeholder="Default input" aria-label="default input example" style=""></div>
-            <div class="col-1">Save</div>
-          </div>
-          <div class="row row-cols-3">
-            <div class="col-2">5PM</div>
-            <div class="col-9"><input class="form-control" id="demo" type="text" placeholder="Default input" aria-label="default input example" style=""></div>
-            <div class="col-1">Save</div>
-          </div>
-        </div>
+      <div class="card">
+      <p><strong>Description9:</strong> <span id="user-description9"></span></p>
       </div>
-     
+      <div class="card">
+      <p><strong>Description10:</strong> <span id="user-description10"></span></p>
+      </div>
+      <div class="card">
+      <p><strong>Description11:</strong> <span id="user-description11"></span></p>
+      </div>
 
+
+
+    
     </div>
     <script src="./script.js"></script>
   </body>

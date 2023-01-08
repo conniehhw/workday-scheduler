@@ -36,15 +36,18 @@ if ($(".timeBlock").text() < hour) {
 //     }
 // });
 
+// $(document).ready(checkTime);
+
 //this is the 3rd test - compares timeBlock vs. hour
+//this function is taking the last element in the loop and applying css.
 $(".timeBlock").each(function() {
     console.log($(this).text());
     if($(this).text() < hour) {
         console.log("The event has already past");
-        $(".eventBlock").css("background-color", "gray");
+        $(".description").css("background-color", "gray");
     } else {
         console.log("The event is to come");
-        $(".eventBlock").css("background-color", "green");
+        $(".description").css("background-color", "green");
     }
 });
 
@@ -68,15 +71,15 @@ $(".timeBlock").each(function() {
 
 
 //This is a function taking content of timeBlock, compare to hour, output eventBlocks in colour & console.log
-function checkTime () {
-    if ($(".timeBlock").text() < hour) {
-        $(".eventBlock").css("background-color", "gray");
-        console.log("the current time is " + hour + " o'clock, the gray event has past");
-    } else {
-        $(".eventBlock").css("background-color", "green");
-        console.log("the current time is " + hour + " 0'clock, the green event to come");
-    }
-};
+// function checkTime () {
+//     if ($(".timeBlock").text() < hour) {
+//         $(".description").css("background-color", "gray");
+//         console.log("the current time is " + hour + " o'clock, the gray event has past");
+//     } else {
+//         $(".description").css("background-color", "green");
+//         console.log("the current time is " + hour + " 0'clock, the green event to come");
+//     }
+// };
 
 
 
@@ -91,12 +94,12 @@ function checkTime () {
 //         }
 //     };
 
-let text = "";
+// let text = "";
 
-for (let i = 0; i < 5; i++) {
-  text += "The number is " + i + "<br>";
-}
-document.getElementById("demo").innerHTML = text;
+// for (let i = 0; i < 5; i++) {
+//   text += "The number is " + i + "<br>";
+// }
+// document.getElementById("demo").innerHTML = text;
 
 // for (let i = 9; i < 17; i++) {
 //     // text += "The number is " + i + "<br>";
@@ -116,54 +119,80 @@ document.getElementById("demo").innerHTML = text;
 // $("#4a").text(takeOut + ", because it's currently week " + weekNum);
 
 
-var eventInput = document.querySelector("#eventBlock");
-var saveButton = document.querySelector("#save");
-var msgDiv = document.querySelector("#msg");
-var userEventSpan = document.querySelector("#user-event");
+var descriptionInput9 = document.querySelector("#description9");
+var descriptionInput10 = document.querySelector("#description10");
+var descriptionInput11 = document.querySelector("#description11");
+var saveButton9 = document.querySelector("#save9");
+var saveButton10 = document.querySelector("#save10");
+var saveButton11 = document.querySelector("#save11");
+var msgSection = document.querySelector("#msg");
+var userDescription9Span = document.querySelector("#user-description9");
+var userDescription10Span = document.querySelector("#user-description10");
+var userDescription11Span = document.querySelector("#user-description11");
 
 renderLastSaved();
 
-function displayMessage(type, message) {
-    msgDiv.textContent = message;
-    msgDiv.setAttribute("class", type);
+function notifyMessage(type, message) {
+    msgSection.textContent = message;
+    msgSection.setAttribute("class", type);
 }
 
 function renderLastSaved() {
-    var event = localStorage.getItem("event");  
-    if (!event) {
+    var description9 = localStorage.getItem("description9");
+    var description10 = localStorage.getItem("description10");  
+    var description11 = localStorage.getItem("description11");  
+
+    if (!description9 || !description10 || !description11) {
       return;
     }
-    userEventSpan.textContent = event;
+
+    userDescription9Span.textContent = description9;
+    userDescription10Span.textContent = description10;
+    userDescription11Span.textContent = description11;
 }
 
-saveButton.addEventListener("click", function(event) {
+saveButton9.addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    var description9 = document.querySelector("#description9").value;
+
+    if (description9 === "") {
+        notifyMessage("error", "Please enter a description");
+          } else {
+            notifyMessage("success", "Appointment Added to localStorage");
+
+    localStorage.setItem("description9", description9);
+    renderLastSaved();
+    }
+}),
+
+
+saveButton10.addEventListener("click", function(event) {
     event.preventDefault();
 
-    var event = document.querySelector("#event").value;
+    var description10 = document.querySelector("#description10").value;
 
-    if (event === "") {
-        displayMessage("error", "Event Block cannot be blank");
-      } else {
-        displayMessage("success", "Saved successfully");
-
-    localStorage.setItem("event", event);
+    if (description10 === "") {
+            notifyMessage("error", "Please enter a description");
+              } else {
+                notifyMessage("success", "Appointment Added to localStorage");
+    
+    localStorage.setItem("description10", description10);
     renderLastSaved();
-}
+    }
+}),
+    
+
+saveButton11.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var description11 = document.querySelector("#description11").value;
+
+    if (description11 === "") {
+        notifyMessage("error", "Please enter a description");
+          } else {
+            notifyMessage("success", "Appointment Added to localStorage");
+    localStorage.setItem("description11", description11);
+    renderLastSaved();
+    }
 });
-
-function deleteItems() {
-    localStorage.clear();
-}
-
-
-
-
-
-// $('#saveEvent').submit();
-// alert("Successfully sumbitted:- " + message);
-
-// localStorage.setItem(key, value);
-// let lastname = localStorage.getItem(key);
-
-// localStorage.removeItem(key);
-// localStorage.clear();
