@@ -73,7 +73,12 @@ renderLastSaved();
 function notifyMessage(type, message) {
     msgSection.textContent = message;
     msgSection.setAttribute("class", type);
-}
+};
+
+// setTimeout(() => {
+//     const msg = document.getElementById('msg');
+//     msg.style.display = 'none';
+// }, 5000);
 
 function renderLastSaved() {
     var description9 = localStorage.getItem("description9");
@@ -126,10 +131,10 @@ saveButton10.addEventListener("click", function(event) {
 
 //     var description11 = document.querySelector("#description11").value;
 
-//     if (description11 === "") {
-//         notifyMessage("error", "Please enter a description");
-//           } else {
-//             notifyMessage("success", "Appointment Added to localStorage");
+    // if (description11 === "") {
+    //     notifyMessage("error", "Please enter a description");
+    //       } else {
+    //         notifyMessage("success", "Appointment Added to localStorage");
 //     localStorage.setItem("description11", description11);
 //     renderLastSaved();
 
@@ -141,6 +146,17 @@ saveButton11.addEventListener("click", function(event) {
 
     var description11 = document.querySelector("#description11").value;
 
+    if (description11 === "") {
+        notifyMessage("error", "Please enter a description");
+          } else {
+            notifyMessage("success", "Appointment Added to localStorage");
+   
+    // setTimeout(function() {
+    //     $('#msg').fadeOut('fast');
+    // }, 1000);
+    
+
     localStorage.setItem("description11", description11);
     renderLastSaved()
+};
 });
