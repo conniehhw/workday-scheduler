@@ -1,10 +1,14 @@
 
 //logic for header - need to parse data still
-const d = new Date();
-document.getElementById("currentDay").innerHTML = d;
+// const d = new Date();
+// document.getElementById("currentDay").innerHTML = d;
 
 let hour = new Date().getHours();
 document.getElementById("demo").innerHTML = hour;
+
+var today = moment();
+$("#currentDay").text(today.format("ddd MMM Do, YYYY"));
+
 // var hour = new Date().getHours();
 
 //Logic for event changing color upon document load
