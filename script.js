@@ -1,12 +1,13 @@
 
+//logic for header - need to parse data still
 const d = new Date();
 document.getElementById("currentDay").innerHTML = d;
 
 let hour = new Date().getHours();
 document.getElementById("demo").innerHTML = hour;
-
 // var hour = new Date().getHours();
 
+//Logic for event changing color upon document load
 // this is a test to see output of .timeBlock (the first) -- .text takes in the unique content
 if ($(".timeBlock").text() < hour) {
     console.log("less");
@@ -26,20 +27,8 @@ if ($(".timeBlock").text() < hour) {
 // };
 // $(document).ready(checkTime);
 
-// this is another test with even/odd numbers -- .text takes in the unique content
-// $(".timeBlock").each(function() {
-//     console.log($(this).text());
-//     if($(this).text() % 2 == 0){
-//         console.log("The number is even")
-//     } else {
-//         console.log("The number is odd")
-//     }
-// });
-
-// $(document).ready(checkTime);
-
 //this is the 3rd test - compares timeBlock vs. hour
-//this function is taking the last element in the loop and applying css.
+//this function is taking the last element in the loop and applying css - last element only
 $(".timeBlock").each(function() {
     console.log($(this).text());
     if($(this).text() < hour) {
@@ -57,45 +46,7 @@ $(".timeBlock").each(function() {
 //     $(this).css("background-color", "yellow");
 // });
 
-// This is a function to checkTime of timeBlocks vs. eventBlocks (not noting the unique content/text)
-//     function checkTime () {
-//         if ("#time10" < hour) {
-//                 $("#eventBlock10").css("background-color", "gray");
-//                 console.log("the current time is " + hour + " o'clock, the gray event has past");
-//             } else {
-//                 $("#eventBlock10").css("background-color", "green");
-//                 console.log("the current time is " + hour + " 0'clock, the green event to come");
-//             };
-//     };
-//   $(document).ready(checkTime);
-
-
-//This is a function taking content of timeBlock, compare to hour, output eventBlocks in colour & console.log
-// function checkTime () {
-//     if ($(".timeBlock").text() < hour) {
-//         $(".description").css("background-color", "gray");
-//         console.log("the current time is " + hour + " o'clock, the gray event has past");
-//     } else {
-//         $(".description").css("background-color", "green");
-//         console.log("the current time is " + hour + " 0'clock, the green event to come");
-//     }
-// };
-
-
-
-// this function takes the #id of time and #id of eventBlock -- how to make it loop through with each unique text
-// function checkTime () {
-//     if ($("#time27").text() < hour) {
-//             $("#eventBlock9").css("background-color", "gray");
-//             console.log("the current time is " + hour + " o'clock, the gray event has past");
-//         } else {
-//             $("#eventBlock9").css("background-color", "green");
-//             console.log("the current time is " + hour + " 0'clock, the green event to come");
-//         }
-//     };
-
 // let text = "";
-
 // for (let i = 0; i < 5; i++) {
 //   text += "The number is " + i + "<br>";
 // }
@@ -105,20 +56,7 @@ $(".timeBlock").each(function() {
 //     // text += "The number is " + i + "<br>";
 // };
 
-// Example for moment activity 15 inst
-// // 4. I need to place my recycling bin on the curb on every odd week of the year for collection. Do I need to put out my recycling bin out this week?
-// var weekNum = today.format("w");
-// var takeOut;
-// // Check odd, then assign boolean
-// if(weekNum % 2) {
-//   takeOut = true;
-// } else {
-//   takeOut = false;
-// }
-
-// $("#4a").text(takeOut + ", because it's currently week " + weekNum);
-
-
+// Logic for input & localStorage
 var descriptionInput9 = document.querySelector("#description9");
 var descriptionInput10 = document.querySelector("#description10");
 var descriptionInput11 = document.querySelector("#description11");
@@ -146,9 +84,9 @@ function renderLastSaved() {
       return;
     }
 
-    userDescription9Span.textContent = description9;
-    userDescription10Span.textContent = description10;
-    userDescription11Span.textContent = description11;
+    descriptionInput9.textContent = description9;
+    descriptionInput10.textContent = description10;
+    descriptionInput11.textContent = description11;
 }
 
 saveButton9.addEventListener("click", function(event) {
@@ -183,16 +121,26 @@ saveButton10.addEventListener("click", function(event) {
 }),
     
 
+// saveButton11.addEventListener("click", function(event) {
+//     event.preventDefault();
+
+//     var description11 = document.querySelector("#description11").value;
+
+//     if (description11 === "") {
+//         notifyMessage("error", "Please enter a description");
+//           } else {
+//             notifyMessage("success", "Appointment Added to localStorage");
+//     localStorage.setItem("description11", description11);
+//     renderLastSaved();
+
+//     }
+// });
+
 saveButton11.addEventListener("click", function(event) {
     event.preventDefault();
 
     var description11 = document.querySelector("#description11").value;
 
-    if (description11 === "") {
-        notifyMessage("error", "Please enter a description");
-          } else {
-            notifyMessage("success", "Appointment Added to localStorage");
     localStorage.setItem("description11", description11);
-    renderLastSaved();
-    }
+    renderLastSaved()
 });
