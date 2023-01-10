@@ -1,48 +1,104 @@
+https://calendly.com/fsf-tutor-team/alistair-rowden
+Something.on(“what I’m listening for”, function() {})
 
 //logic for header - need to parse data still
 // const d = new Date();
 // document.getElementById("currentDay").innerHTML = d;
+// var hour = new Date().getHours();
 
 let hour = new Date().getHours();
+// hour = 10;
 document.getElementById("demo").innerHTML = hour;
 
 var today = moment();
 $("#currentDay").text(today.format("ddd MMM Do, YYYY"));
 
+//attr = id
+
+// $(".timeBlock").each(function(){
+//   if($(this).attr("id") < hour) {
+//        console.log("past"),
+//        $(this).css("background-color", "gray");
+       
+//    } else if ($(this).text() == hour) {
+//        console.log("now"),
+//        $(this).css("background-color", "red");
+//     } else {
+//        console.log("Future"),
+//        $(this).css("background-color", "green");
+//     }});
+
+// function whatTime () {
+// $(".timeBlock").each(function () {
+//     if($(this).text() < hour) {
+//         $(this).text() == "Past"
+//         console.log("Past") 
+//     } else if ($(this).text() == hour) {
+//         $(this).text() == "Now" 
+//         console.log("Now") 
+//     } else {
+//         $(this).text() == "Future"
+//         console.log("Future")  
+//         }
+// });
+// }
+
 // var hour = new Date().getHours();
 
 //Logic for event changing color upon document load
 // this is a test to see output of .timeBlock (the first) -- .text takes in the unique content
-if ($(".timeBlock").text() < hour) {
-    console.log("less");
-} else {
-    console.log("greater");
-};
+// if ($("#hour9") < hour) {
+//     console.log("less");
+// } else if ($(".timeBlock").text() == hour) {
+//     console.log("equal");
+// } else {
+//     console.log("greater1");
+// };
 
 // this checks the .text inside #time and compares vs. hour to produce a colour in the marked #eventBlock9 specific
 // function checkTime () {
-// if ($("#time").text() < hour) {
-//         $("#eventBlock9").css("background-color", "gray");
+// if ($("#hour10").text() < hour) {
+//         $("#description10").css("background-color", "gray");
 //         console.log("the time is " + hour + " o'clock, the gray event has past");
-//     } else {
-//         $("#eventBlock9").css("background-color", "green");
+//     } else if ($("#hour10").text() == hour) {
+//         $("#description10").css("background-color", "red");
+//         console.log($("#hour10").text());
+//         console.log("the time is " + hour + " o'clock, the red event is now");
+//         } else  {
+//         $("#description10").css("background-color", "green");
+//         console.log($("#hour10").text());
 //         console.log("the time is " + hour + " 0'clock, the green event to come");
 //    }
 // };
+
 // $(document).ready(checkTime);
 
-//this is the 3rd test - compares timeBlock vs. hour
-//this function is taking the last element in the loop and applying css - last element only
-$(".timeBlock").each(function() {
-    console.log($(this).text());
-    if($(this).text() < hour) {
+// this is the 3rd test - compares timeBlock vs. hour
+// this function is taking the last element in the loop and applying css - last element only
+$(".timeBlock").each(function(){
+   if(($(this).attr("id")) < hour) {
         console.log("The event has already past");
-        $(".description").css("background-color", "gray");
-    } else {
-        console.log("The event is to come");
-        $(".description").css("background-color", "green");
+        $(this).siblings("textarea").css("background-color", "gray");
+    } else if ($(this).attr("id") == hour) {
+        console.log("The event is now"),
+        $(this).siblings("textarea").css("background-color", "red");
+     } else {
+        console.log("The event is to come"),
+        $(this).siblings("textarea").css("background-color", "green");
     }
-});
+  });
+
+
+
+// $(".description").each(function () {
+//     if($(".timeBlock.text()") < hour) {
+//         console.log("The event has already past");
+//         $(".description").css("background-color", "gray");
+//     } else {
+//         console.log("The event is to come");
+//         $(".description").css("background-color", "green");
+//     }
+//     });
 
 //this is a test to loop through each eventBlock; output "hey" & bgcolor 
 // $(".eventBlock").each(function() {
@@ -61,6 +117,17 @@ $(".timeBlock").each(function() {
 // };
 
 // Logic for input & localStorage
+
+$(".saveBtn").on("click", function() {
+  console.log($(this).siblings("textarea"));
+  localStorage.setItem("textarea", description11); //this. is dynamic & changes- starting point
+});
+
+localStorage.setItem("description11", description11);
+
+https://docs.google.com/forms/d/e/1FAIpQLSdb4ejjbqoqKO-Q4k7zeO_xwykwB0dxYLWYm1mX5Ik45MzEeg/viewform
+
+
 var descriptionInput9 = document.querySelector("#description9");
 var descriptionInput10 = document.querySelector("#description10");
 var descriptionInput11 = document.querySelector("#description11");
@@ -78,11 +145,6 @@ function notifyMessage(type, message) {
     msgSection.textContent = message;
     msgSection.setAttribute("class", type);
 };
-
-// setTimeout(() => {
-//     const msg = document.getElementById('msg');
-//     msg.style.display = 'none';
-// }, 5000);
 
 function renderLastSaved() {
     var description9 = localStorage.getItem("description9");
@@ -129,22 +191,6 @@ saveButton10.addEventListener("click", function(event) {
     }
 }),
     
-
-// saveButton11.addEventListener("click", function(event) {
-//     event.preventDefault();
-
-//     var description11 = document.querySelector("#description11").value;
-
-    // if (description11 === "") {
-    //     notifyMessage("error", "Please enter a description");
-    //       } else {
-    //         notifyMessage("success", "Appointment Added to localStorage");
-//     localStorage.setItem("description11", description11);
-//     renderLastSaved();
-
-//     }
-// });
-
 saveButton11.addEventListener("click", function(event) {
     event.preventDefault();
 
@@ -158,9 +204,13 @@ saveButton11.addEventListener("click", function(event) {
     // setTimeout(function() {
     //     $('#msg').fadeOut('fast');
     // }, 1000);
-    
-
     localStorage.setItem("description11", description11);
     renderLastSaved()
 };
 });
+
+
+
+
+    
+   
