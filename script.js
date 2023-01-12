@@ -25,6 +25,8 @@ $(".timeBlock").each(function(){
     }
   });
 
+  renderLastRegistered();
+
 $(".saveBtn").on("click", function() {
   // console.log($(this).siblings("textarea"));
 var description9 = $("#description9").val();
@@ -55,9 +57,47 @@ var description17 = $("#description17").val();
 
     const element = document.getElementById("saveBtn");
 
-function renderLastSaved(){
-  localStorage.getItem("textarea");
-}
+  function renderLastRegistered() {
+    var poop = localStorage.getItem("description9");
+    description9.textContent = poop;
+  }
+
+    function renderLastRegistered() {
+      var test = localStorage.getItem("description9");
+      description9.textContent = test;
+
+  }
+
+// function renderLastSaved(){
+//   localStorage.getItem("textarea");
+// }//////////////////////////////////////////////////////////////////////
+
+// var userEmailSpan = document.querySelector("#user-email");
+// var userPasswordSpan = document.querySelector("#user-password");
+
+// renderLastRegistered();
+
+// function renderLastRegistered() {
+//   var email = localStorage.getItem("email");
+//   var password = localStorage.getItem("password");
+
+//   if (!email || !password) {
+//     return;
+//   }
+
+//   userEmailSpan.textContent = email;
+// }
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function renderLastSaved() {
