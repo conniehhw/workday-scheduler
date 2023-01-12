@@ -1,6 +1,6 @@
 # Work Day Scheduler
 
-[link to live site](https:///)
+[link to live site]( https://conniehhw.github.io/workday-scheduler/)
 
 ## Description
 
