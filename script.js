@@ -5,6 +5,7 @@ document.getElementById("demo").innerHTML = hour;
 var today = moment();
 $("#currentDay").text(today.format("ddd MMM Do, YYYY"));
 
+
 //attr = id
 
 // Logic to verify if the event has past, is current or to come.
@@ -21,8 +22,9 @@ $(".timeBlock").each(function(){
     }
   });
 
+
 // execute reload page from localStorage
-renderLastRegistered();
+renderLastSaved();
 
 // logic to store in localStorage
 $(".saveBtn").on("click", function() {
@@ -56,140 +58,37 @@ $(".saveBtn").on("click", showStatus);
     const element = document.getElementById("saveBtn");
 
 
+// NOTE: this is DRY - there should be a method to loop through each textarea & check if there is text;
+// if there is text, it should renderLastSaved
 // logic to reload page from localStorage
-  function renderLastRegistered() {
-    var poop = localStorage.getItem("description9");
-    description9.textContent = poop;
+  function renderLastSaved() {
+    var describe9 = localStorage.getItem("description9");
+    description9.textContent = describe9;
 
-    var test = localStorage.getItem("description10");
-    description10.textContent = test;
+    var describe10 = localStorage.getItem("description10");
+    description10.textContent = describe10;
+
+    var describe11 = localStorage.getItem("description11");
+    description11.textContent = describe11;
+
+    var describe12 = localStorage.getItem("description12");
+    description12.textContent = describe12;
+
+    var describe13 = localStorage.getItem("description13");
+    description13.textContent = describe13;
+
+    var describe14 = localStorage.getItem("description14");
+    description14.textContent = describe14;
+
+    var describe15 = localStorage.getItem("description15");
+    description15.textContent = describe15;
+
+    var describe16 = localStorage.getItem("description16");
+    description16.textContent = describe16;
+
+    var describe17 = localStorage.getItem("description17");
+    description17.textContent = describe17;
+
   }
 
 
-// function renderLastSaved(){
-//   localStorage.getItem("textarea");
-// }//////////////////////////////////////////////////////////////////////
-
-// var userEmailSpan = document.querySelector("#user-email");
-// var userPasswordSpan = document.querySelector("#user-password");
-
-// renderLastRegistered();
-
-// function renderLastRegistered() {
-//   var email = localStorage.getItem("email");
-//   var password = localStorage.getItem("password");
-
-//   if (!email || !password) {
-//     return;
-//   }
-
-//   userEmailSpan.textContent = email;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function renderLastSaved() {
-//   localStorage.getItem("textarea", description9);
-//   localStorage.getItem("textarea", description10);
-//   localStorage.getItem("textarea", description11);
-// };
-
-// renderLastSaved();
-
-// // var descriptionInput9 = document.querySelector("#description9");
-// var descriptionInput10 = document.querySelector("#description10");
-// var descriptionInput11 = document.querySelector("#description11");
-// // var saveButton9 = document.querySelector("#save9");
-// var saveButton10 = document.querySelector("#save10");
-// var saveButton11 = document.querySelector("#save11");
-// var msgSection = document.querySelector("#msg");
-// var userDescription9Span = document.querySelector("#user-description9");
-// var userDescription10Span = document.querySelector("#user-description10");
-// var userDescription11Span = document.querySelector("#user-description11");
-
-// renderLastSaved();
-
-// function notifyMessage(type, message) {
-//     msgSection.textContent = message;
-//     msgSection.setAttribute("class", type);
-// };
-
-// function renderLastSaved() {
-//     var description9 = localStorage.getItem("description9");
-//     var description10 = localStorage.getItem("description10");  
-//     var description11 = localStorage.getItem("description11");  
-
-//     if (!description9 || !description10 || !description11) {
-//       return;
-//     }
-
-//     descriptionInput9.textContent = description9;
-//     descriptionInput10.textContent = description10;
-//     descriptionInput11.textContent = description11;
-//     descriptionInput12.textContent = description12;
-// }
-
-// saveButton9.addEventListener("click", function(event) {
-//     event.preventDefault();
-    
-//     var description9 = document.querySelector("#description9").value;
-
-//     if (description9 === "") {
-//         notifyMessage("error", "Please enter a description");
-//           } else {
-//             notifyMessage("success", "Appointment Added to localStorage");
-
-//     localStorage.setItem("description9", description9);
-//     renderLastSaved();
-//     }
-// }),
-
-
-// saveButton10.addEventListener("click", function(event) {
-//     event.preventDefault();
-
-//     var description10 = document.querySelector("#description10").value;
-
-//     if (description10 === "") {
-//             notifyMessage("error", "Please enter a description");
-//               } else {
-//                 notifyMessage("success", "Appointment Added to localStorage");
-    
-//     localStorage.setItem("description10", description10);
-//     renderLastSaved();
-//     }
-// }),
-    
-// saveButton11.addEventListener("click", function(event) {
-//     event.preventDefault();
-
-//     var description11 = document.querySelector("#description11").value;
-
-//     if (description11 === "") {
-//         notifyMessage("error", "Please enter a description");
-//           } else {
-//             notifyMessage("success", "Appointment Added to localStorage");
-   
-//     // setTimeout(function() {
-//     //     $('#msg').fadeOut('fast');
-//     // }, 1000);
-//     localStorage.setItem("description11", description11);
-//     renderLastSaved()
-// // };
-// });
-
-
-
-
-    
-   
