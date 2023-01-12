@@ -1,6 +1,6 @@
 //logic for header 
 let hour = new Date().getHours();
-document.getElementById("demo").innerHTML = hour;
+// document.getElementById("demo").innerHTML = hour;
 
 var today = moment();
 $("#currentDay").text(today.format("ddd MMM Do, YYYY"));
@@ -39,17 +39,22 @@ var description15 = $("#description15").val();
 var description16 = $("#description16").val();
 var description17 = $("#description17").val();
   localStorage.setItem("description9", description9); // id, value [input]
-  localStorage.setItem("description10", description10); // id, value[input]
-  localStorage.setItem("description11", description11); // id, value[input]
-  localStorage.setItem("description12", description12); // id, value [input]
-  localStorage.setItem("description13", description13); // id, value [input]
-  localStorage.setItem("description14", description14); // id, value [input]
-  localStorage.setItem("description15", description15); // id, value [input]
-  localStorage.setItem("description16", description16); // id, value [input]
-  localStorage.setItem("description17", description17); // id, value [input]
+  localStorage.setItem("description10", description10); 
+  localStorage.setItem("description11", description11); 
+  localStorage.setItem("description12", description12); 
+  localStorage.setItem("description13", description13); 
+  localStorage.setItem("description14", description14); 
+  localStorage.setItem("description15", description15); 
+  localStorage.setItem("description16", description16); 
+  localStorage.setItem("description17", description17); 
       });
 
 
+      // setTimeout(() => {
+      //   const msg = document.getElementById('status');
+      //   msg.style.display = "none";
+      //   }, 3000);
+      
 // logic to display description is saved in local Storage
 $(".saveBtn").on("click", showStatus);
     function showStatus() {
@@ -57,9 +62,18 @@ $(".saveBtn").on("click", showStatus);
 
     const element = document.getElementById("saveBtn");
 
+    
 
-// NOTE: this is DRY - there should be a method to loop through each textarea & check if there is text;
-// if there is text, it should renderLastSaved
+// NOTE line 66 below: this is DRY - there should be a method to loop through each textarea
+// if there is text; to execute function renderLastSaved (localStorage.getItem) - something:
+// $(".description").each(function(){
+//   if(($(this).attr("id")) == ""){
+//   console.log("this textarea is empty");
+//  } else {
+//     $(this).children("textarea").function(renderLastSaved());
+//   }
+// });
+
 // logic to reload page from localStorage
   function renderLastSaved() {
     var describe9 = localStorage.getItem("description9");
