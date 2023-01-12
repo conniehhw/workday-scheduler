@@ -23,9 +23,9 @@ This app will run in the browser and features dynamically upated HTML & CSS powe
 
 
 ```md
-![Calendar with no events] (/Assets/images/EmptyCalendar.jpg)
-![Calendar with events showing red, gray and green] (/Assets/images/CalendarColourCoded.jpg)
-![Calendar with events showing in local storage] (/Assets/images/CalendarSavedEvents.jpg)
+![Calendar with no events] ./Assets/images/EmptyCalendar.jpg)
+![Calendar with events showing red, gray and green] (./Assets/images/CalendarColourCoded.jpg)
+![Calendar with events showing in local storage] (./Assets/images/CalendarSavedEvents.jpg)
 ```
 
 ## License
