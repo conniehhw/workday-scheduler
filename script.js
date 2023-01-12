@@ -1,8 +1,4 @@
-//logic for header - need to parse data still
-// const d = new Date();
-// document.getElementById("currentDay").innerHTML = d;
-// var hour = new Date().getHours();
-
+//logic for header 
 let hour = new Date().getHours();
 document.getElementById("demo").innerHTML = hour;
 
@@ -25,8 +21,10 @@ $(".timeBlock").each(function(){
     }
   });
 
-  renderLastRegistered();
+// execute reload page from localStorage
+renderLastRegistered();
 
+// logic to store in localStorage
 $(".saveBtn").on("click", function() {
   // console.log($(this).siblings("textarea"));
 var description9 = $("#description9").val();
@@ -50,23 +48,23 @@ var description17 = $("#description17").val();
       });
 
 
-    $(".saveBtn").on("click", showStatus);
-
+// logic to display description is saved in local Storage
+$(".saveBtn").on("click", showStatus);
     function showStatus() {
     document.querySelector("#status").innerHTML = "Added to Local Storage"}
 
     const element = document.getElementById("saveBtn");
 
+
+// logic to reload page from localStorage
   function renderLastRegistered() {
     var poop = localStorage.getItem("description9");
     description9.textContent = poop;
+
+    var test = localStorage.getItem("description10");
+    description10.textContent = test;
   }
 
-    function renderLastRegistered() {
-      var test = localStorage.getItem("description9");
-      description9.textContent = test;
-
-  }
 
 // function renderLastSaved(){
 //   localStorage.getItem("textarea");
