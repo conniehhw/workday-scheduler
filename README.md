@@ -20,13 +20,9 @@ This app will run in the browser and features dynamically upated HTML & CSS powe
 3. After inputting the event in the time slot of your choice; you click the blue save button, which will save your input to local Storage.
 4. Upon refreshing / reloading the page, it will retrieve your inputs from location Storage and the event will still be available for viewing.
 
-
-
-```md
-![Calendar with no events] ./Assets/images/EmptyCalendar.jpg)
-![Calendar with events showing red, gray and green] (./Assets/images/CalendarColourCoded.jpg)
-![Calendar with events showing in local storage] (./Assets/images/CalendarSavedEvents.jpg)
-```
+![Calendar with no events](./Assets/EmptyCalendar.jpg)
+![Calendar with events showing red, gray and green] (./Assets/CalendarColourCoded.jpg)
+![Calendar with events showing in local storage] (./Assets/CalendarSavedEvents.jpg)
 
 ## License
 
